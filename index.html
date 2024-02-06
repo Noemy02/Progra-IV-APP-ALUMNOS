@@ -152,6 +152,38 @@
                     this.alumno = alumno;
                 },
                 guardarAlumno() {
+                    if (!this.alumno.codigo.trim()) {
+                        alert('Por favor, ingrese el codigo del alumno.');
+                        return;
+                    }
+                    if (!this.alumno.nombre.trim()) {
+                        alert('Por favor, ingrese el nombre del alumno.');
+                        return;
+                    }
+                    if (!this.alumno.direccion.trim()) {
+                        alert('Por favor, ingrese la direccion del alumno.');
+                        return;
+                    }
+                    if (!this.alumno.municipio.trim()) {
+                        alert('Por favor, ingrese el municipio del alumno.');
+                        return;
+                    }
+                    if (!this.alumno.departamento.trim()) {
+                        alert('Por favor, ingrese el departamento del alumno.');
+                        return;
+                    }
+                    if (!this.alumno.telefono.trim()) {
+                        alert('Por favor, ingrese el telefono del alumno.');
+                        return;
+                    }
+                    if (!this.alumno.fecha_de_nacimiento.trim()) {
+                        alert('Por favor, ingrese la fecha de nacimiento del alumno.');
+                        return;
+                    }
+                    if (!this.alumno.sexo.trim()) {
+                        alert('Por favor, ingrese el sexo del alumno.');
+                        return;
+                    }
              // Almacenamiento del objeto alumnos en localStorage
                    if (this.accion === 'nuevo') {
              // Verificar si el código ya existe
@@ -168,10 +200,6 @@
                     if (indiceModificar !== -1) {
                   this.alumnos[indiceModificar] = this.alumno;
         }
-        if (!this.producto.codigo.trim()) {
-                        alert('Por favor, ingrese el codigo del alumno.');
-                        return;
-                    }
     }
    localStorage.setItem('alumnos', JSON.stringify(this.alumnos));
     this.listarAlumnos();
